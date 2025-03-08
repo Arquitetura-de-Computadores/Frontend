@@ -79,7 +79,6 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col gap-6">
-          {/* Bloco de Temperatura */}
           <div className="rounded-xl bg-white py-6 px-5 w-[90%] max-w-lg mx-auto flex flex-col">
             <h1 className="text-[20px] font-semibold text-black mb-5">Temperatura</h1>
             <div className="flex items-center justify-center gap-4 mb-10">
