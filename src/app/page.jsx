@@ -51,7 +51,7 @@ export default function Home() {
                   <li key={index} className="border-t border-gray-300 pt-5 px-5 text-sm">
                     <div className="flex justify-between">
                       <span>{rua.label}</span>
-                      <span className={`font-semibold ${rua.status === "Moderado" ? "text-green-500 bg-green-200" : rua.status === "Médio" ? "text-yellow-500 bg-yellow-100" : rua.status === "Intenso" ? "text-red-500 bg-red-200" : "text-gray-500 bg-gray-200"} px-2 py-1 rounded-full`}>
+                      <span className={`font-semibold ${rua.status === "Moderado" ? "text-green-500 bg-green-200" : rua.status === "Médio" ? "text-yellow-500 bg-yellow-100" : rua.status === "Intenso" ? "text-red-500 bg-red-200" : "text-gray-500 bg-gray-200"} px-2 py-1 rounded`}>
                         {rua.status}
                       </span>
                     </div>

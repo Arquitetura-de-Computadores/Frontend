@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 const menuItems = [
     {
         icon: "/Home.svg",
-        label: "HOME",
+        label: "Home",
         href: "/",
     },
     {
