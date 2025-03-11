@@ -70,20 +70,25 @@ export default function Home() {
                 </h1>
               </div>
               <div className="flex justify-end w-full">
-                <Link href="/">
-                  <span className="text-[10px] text-gray-500">Como esse sistema funciona?</span>
+                <Link href="/iluminacao">
+                  <span className="text-[10px] text-gray-500 underline">Como esse sistema funciona?</span>
                 </Link>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-20">
           <div className="rounded-xl bg-white py-6 px-5 w-[90%] max-w-lg mx-auto flex flex-col">
             <h1 className="text-[20px] font-semibold text-black mb-5">Temperatura</h1>
             <div className="flex items-center justify-center gap-4 mb-10">
               <Image src="/Temperatura.png" alt="" width={120} height={120} />
               <h1 className="font-semibold text-[60px]">26°</h1>
+            </div>
+            <div className="flex justify-end w-full">
+              <Link href="/clima">
+                <span className="text-[16px] text-gray-500 underline">Ver detalhes</span>
+              </Link>
             </div>
           </div>
 
@@ -91,6 +96,11 @@ export default function Home() {
             <h1 className="text-[20px] font-semibold text-black mb-5">Umidade</h1>
             <div className="flex justify-center mb-10">
               <Image src="/Pie.png" alt="" width={180} height={180} />
+            </div>
+            <div className="flex justify-end w-full">
+              <Link href="/clima">
+                <span className="text-[16px] text-gray-500 underline">Ver detalhes</span>
+              </Link>
             </div>
           </div>
         </div>
