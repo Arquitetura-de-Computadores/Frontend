@@ -1,10 +1,13 @@
+"use client"
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import ColetaModal from "@/components/coletaModal";
 
 const ruas = [
   {
     label: "Nome de Rua Exemplo 1, Nome de Bairro 1",
-    status: "90"
+    status: "100"
   },
   {
     label: "Nome de Rua Exemplo 2, Nome de Bairro 2",
@@ -33,6 +36,8 @@ const ruas = [
 ];
 
 const Page = () => {
+  const [ruaSelecionada, setRuaSelecionada] = useState(null);
+
   return (
     <div className="mt-4 px-12">
       <h1 className="text-[28px] font-semibold">Coleta Inteligente</h1>
@@ -55,9 +60,7 @@ const Page = () => {
                       <span className={`font-semibold ${rua.status <= 40 ? "text-green-500 bg-green-200" : rua.status <= 79 ? "text-yellow-500 bg-yellow-100" : rua.status >= 80 ? "text-red-500 bg-red-200" : "text-gray-500 bg-gray-200"} px-4 py-1 rounded`}>
                         {rua.status}%
                       </span>
-                      <Link href="/">
-                        <span className="text-[16px] text-gray-500 underline">Ver detalhes</span>
-                      </Link>
+                      <button className="text-[16px] text-gray-500 underline" onClick={() => setRuaSelecionada(rua)}>Ver detalhes</button>
                     </div>
                     </div>
                   </li>
@@ -99,6 +102,7 @@ const Page = () => {
           </div>
         </div>
       </div>
+      <ColetaModal rua={ruaSelecionada} onClose={() => setRuaSelecionada(null)} />
     </div>
   )
 }
