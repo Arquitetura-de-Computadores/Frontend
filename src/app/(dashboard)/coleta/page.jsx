@@ -1,8 +1,9 @@
 "use client"
 import { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
 import ColetaModal from "@/components/coletaModal";
+import Temperatura from "@/components/temperatura"
+import AvisoColeta from "@/components/avisoColeta"
+import AvisoDescarte from "@/components/avisoDescarte"
 
 const ruas = [
   {
@@ -57,49 +58,22 @@ const Page = () => {
                     <div className="flex justify-between">
                       <span>{rua.label}</span>
                       <div className="flex justify-between gap-3">
-                      <span className={`font-semibold ${rua.status <= 40 ? "text-green-500 bg-green-200" : rua.status <= 79 ? "text-yellow-500 bg-yellow-100" : rua.status >= 80 ? "text-red-500 bg-red-200" : "text-gray-500 bg-gray-200"} px-4 py-1 rounded`}>
-                        {rua.status}%
-                      </span>
-                      <button className="text-[16px] text-gray-500 underline" onClick={() => setRuaSelecionada(rua)}>Ver detalhes</button>
-                    </div>
+                        <span className={`font-semibold ${rua.status <= 40 ? "text-green-500 bg-green-200" : rua.status <= 79 ? "text-yellow-500 bg-yellow-100" : rua.status >= 80 ? "text-red-500 bg-red-200" : "text-gray-500 bg-gray-200"} px-4 py-1 rounded`}>
+                          {rua.status}%
+                        </span>
+                        <button className="text-[16px] text-gray-500 underline" onClick={() => setRuaSelecionada(rua)}>Ver detalhes</button>
+                      </div>
                     </div>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
-
-          <div className="rounded-xl bg-white p-4">
-            <div className="mt-10 flex px-20 items-center gap-4 flex-col mb-11">
-              <div className="flex px-2 items-center gap-16">
-                <Image src="/Lixo.svg" alt="" width={106} height={106}></Image>
-                <h1 className="font-semibold text-lg text-black"> Ao descartar materiais pontudos ou afiados, tente embrulhá-los para uma coleta segura!</h1>
-              </div>
-            </div>
-          </div>
+          <AvisoColeta/>
         </div>
-
         <div className="flex flex-col gap-20">
-          <div className="rounded-xl bg-white py-6 px-5 w-[90%] max-w-lg mx-auto flex flex-col">
-            <h1 className="text-[20px] font-semibold text-black mb-5">Temperatura</h1>
-            <div className="flex items-center justify-center gap-4 mb-10">
-              <Image src="/Temperatura.png" alt="" width={120} height={120} />
-              <h1 className="font-semibold text-[60px]">26°</h1>
-            </div>
-            <div className="flex justify-end w-full">
-              <Link href="/clima">
-                <span className="text-[16px] text-gray-500 underline">Ver detalhes</span>
-              </Link>
-            </div>
-          </div>
-
-          <div className="rounded-xl bg-white py-6 px-5 w-[90%] max-w-lg mx-auto">
-            <h1 className=" flex text-[20px] font-semibold text-black mb-5 justify-center">Facilite o trabalho dos garis!</h1>
-            <div className="flex justify-center mb-10">
-              <Image src="/Descarte.svg" alt="" width={180} height={180} />
-            </div>
-            <p className="flex justify-center font-bold">Ao descartar o&nbsp;<span className="text-[#4880FF]">lixo</span>, separe-o de forma&nbsp;<span className="text-[#4880FF]">organizada</span></p>
-          </div>
+          <Temperatura />
+          <AvisoDescarte/>
         </div>
       </div>
       <ColetaModal rua={ruaSelecionada} onClose={() => setRuaSelecionada(null)} />
