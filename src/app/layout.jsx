@@ -13,8 +13,8 @@ const nunitoSans = Nunito_Sans({
 export default function RootLayout({ children }) {
   return (
     <html>
-      <body>
-        <div className="h-full flex">
+      <body className="min-h-screen flex flex-col">
+        <div className="flex flex-grow">
           <div className="w-[14%] md:w-[8%] lg:w-[16%] xl:w-[14%] p-4 bg-[#FFFFFF]">
             <Link href="/" className="flex items-center justify-center gap-2">
               <Image src="/Logo.png" alt="" width={150} height={150} />
