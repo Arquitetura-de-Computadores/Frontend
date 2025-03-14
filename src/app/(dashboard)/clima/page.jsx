@@ -1,5 +1,6 @@
 import Temperatura from "@/components/temperatura"
 import Umidade from "@/components/umidade"
+import AvisoClima from "@/components/avisoClima"
 
 const Page = () => {
   return (
@@ -23,6 +24,9 @@ const Page = () => {
         <div className="mt-6 text-[18px]">
           <p className="mb-6">A umidade influencia diretamente na sensação térmica, pois afeta a evaporação do suor. Quando a umidade está alta, o suor evapora menos, dificultando o resfriamento do corpo e aumentando a sensação de calor. Já com umidade baixa, o suor evapora rapidamente, o que pode ser confortável em temperaturas amenas, mas agravar o frio ou causar desidratação no calor.</p>
         </div>
+      </div>
+      <div className="mt-16">
+        <AvisoClima/>
       </div>
     </div>
   )
