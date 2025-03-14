@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
             <Menu />
           </div>
           <div className="w-[86%] md:w-[92%] lg:w-[84%] xl:w-[86%] bg-[#F5F6FA] overflow-scroll scrollbar-hide text-black" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
-            <div className="mb-7.5">
+            <div className="mb-3">
               {children}
             </div>
           </div>

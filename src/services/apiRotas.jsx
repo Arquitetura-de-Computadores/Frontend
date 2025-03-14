@@ -1,28 +1,31 @@
 import { axiosInstance } from "./axiosInstance";
 
 export const getTemperatura = async () => {
-    const response = await fetch("http://localhost:5050/temperatura", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({})
-    });
-    return await response.json();
+    try {
+        const response = await axiosInstance.get("/temperatura");
+        return response.data;
+    } catch (error) {
+        console.error("Erro ao buscar temperatura:", error);
+        throw error;
+    }
 };
 
 export const getUmidade = async () => {
-    const response = await fetch("http://localhost:5050/umidade", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({})
-    });
-    return await response.json();
+    try {
+        const response = await axiosInstance.get("/umidade");
+        return response.data;
+    } catch (error) {
+        console.error("Erro ao buscar umidade:", error);
+        throw error;
+    }
 };
 
 export const getLuz = async () => {
-    const response = await fetch("http://localhost:5050/luz", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({})
-    });
-    return await response.json();
-};
+    try {
+        const response = await axiosInstance.get("/luz");
+        return response.data;
+    } catch (error) {
+        console.error("Erro ao buscar iluminação:", error);
+        throw error;
+    }
+};  
