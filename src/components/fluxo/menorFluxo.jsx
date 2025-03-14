@@ -15,7 +15,7 @@ const MenorFluxo = () => {
   );
 
   return (
-    <div className="rounded-xl bg-white py-3">
+    <div className="rounded-xl bg-white py-3 h-[550px] flex flex-col">
       <div className="flex px-5">
         <h1 className="text-[20px] font-semibold text-black mb-5">LUGARES COM MENOR FLUXO DE TRÂNSITO</h1>
       </div>
@@ -35,7 +35,7 @@ const MenorFluxo = () => {
       </div>
 
       {totalPaginas > 1 && (
-        <div className="flex justify-between items-center px-5 mt-5">
+        <div className="flex justify-between items-center px-5 py-3 border-t border-gray-300 mt-auto">
           <button onClick={() => setPaginaAtual(paginaAtual - 1)} disabled={paginaAtual === 0} className="px-3 py-1 bg-gray-200 rounded disabled:opacity-50">Anterior</button>
           <span className="text-sm">Página {paginaAtual + 1} de {totalPaginas}</span>
           <button onClick={() => setPaginaAtual(paginaAtual + 1)} disabled={paginaAtual === totalPaginas - 1} className="px-3 py-1 bg-gray-200 rounded disabled:opacity-50">Próximo</button>
