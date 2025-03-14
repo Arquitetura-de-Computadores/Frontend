@@ -1,6 +1,6 @@
-import Temperatura from "@/components/temperatura"
-import Umidade from "@/components/umidade"
-import AvisoClima from "@/components/avisoClima"
+import Temperatura from "@/components/clima/temperatura"
+import Umidade from "@/components/clima/umidade"
+import AvisoClima from "@/components/clima/avisoClima"
 
 const Page = () => {
   return (

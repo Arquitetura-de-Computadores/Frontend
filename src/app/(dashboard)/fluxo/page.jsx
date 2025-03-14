@@ -1,7 +1,7 @@
-import MaiorFluxo from "@/components/maiorFluxo";
-import MenorFluxo from "@/components/menorFluxo";
-import AvisoSinalizacao from "@/components/avisoSinalizacao";
-import AvisoBebida from "@/components/avisoBebida";
+import MaiorFluxo from "@/components/fluxo/maiorFluxo";
+import MenorFluxo from "@/components/fluxo/menorFluxo";
+import AvisoSinalizacao from "@/components/fluxo/avisoSinalizacao";
+import AvisoBebida from "@/components/fluxo/avisoBebida";
 
 const Page = () => {
   return (

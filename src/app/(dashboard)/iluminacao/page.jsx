@@ -1,5 +1,5 @@
-import AvisoPostes from "@/components/avisoPostes"
-import Momento from "@/components/momento"
+import AvisoPostes from "@/components/iluminacao/avisoPostes"
+import Momento from "@/components/iluminacao/momento"
 
 const Page = () => {
   return (

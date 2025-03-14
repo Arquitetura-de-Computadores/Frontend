@@ -1,9 +1,9 @@
 "use client"
 import { useState } from "react";
-import ColetaModal from "@/components/coletaModal";
-import Temperatura from "@/components/temperatura"
-import AvisoColeta from "@/components/avisoColeta"
-import AvisoDescarte from "@/components/avisoDescarte"
+import ColetaModal from "@/components/coleta/coletaModal";
+import Temperatura from "@/components/clima/temperatura"
+import AvisoColeta from "@/components/coleta/avisoColeta"
+import AvisoDescarte from "@/components/coleta/avisoDescarte"
 
 const ruas = [
   {

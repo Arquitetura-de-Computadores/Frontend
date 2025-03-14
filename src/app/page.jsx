@@ -1,7 +1,7 @@
-import Temperatura from "@/components/temperatura"
-import Umidade from "@/components/umidade"
-import AvisoPostes from "@/components/avisoPostes"
-import MaiorFluxo from "@/components/maiorFluxo"
+import Temperatura from "@/components/clima/temperatura"
+import Umidade from "@/components/clima/umidade"
+import AvisoPostes from "@/components/iluminacao/avisoPostes"
+import MaiorFluxo from "@/components/fluxo/maiorFluxo"
 
 export default function Home() {
   return (
