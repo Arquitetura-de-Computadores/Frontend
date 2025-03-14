@@ -1,13 +1,23 @@
+"use client";
+import { useState } from "react";
 import ruas from "@/app/(dashboard)/fluxo/ruas";
 
 const MaiorFluxo = () => {
-  const ruasFiltradas = ruas
-    .filter(rua => rua.status === "Intenso" || rua.status === "Médio").sort((a, b) => {
-      if (a.status !== b.status) {
-        return a.status === "Intenso" ? -1 : 1;
-      }
-      return a.label.localeCompare(b.label);
-    });
+  const ruasFiltradas = ruas.filter(rua => rua.status === "Intenso" || rua.status === "Médio").sort((a, b) => {
+    if (a.status !== b.status) {
+      return a.status === "Intenso" ? -1 : 1;
+    }
+    return a.label.localeCompare(b.label);
+  });
+
+  const itensPorPagina = 6;
+  const [paginaAtual, setPaginaAtual] = useState(0);
+
+  const totalPaginas = Math.ceil(ruasFiltradas.length / itensPorPagina);
+  const ruasPaginadas = ruasFiltradas.slice(
+    paginaAtual * itensPorPagina,
+    (paginaAtual + 1) * itensPorPagina
+  );
 
   return (
     <div className="rounded-xl bg-white py-3">
@@ -16,7 +26,7 @@ const MaiorFluxo = () => {
       </div>
       <div>
         <ul className="space-y-5">
-          {ruasFiltradas.map((rua, index) => (
+          {ruasPaginadas.map((rua, index) => (
             <li key={index} className="border-t border-gray-300 pt-5 px-5 text-sm">
               <div className="flex justify-between">
                 <span>{rua.label}</span>
@@ -28,6 +38,14 @@ const MaiorFluxo = () => {
           ))}
         </ul>
       </div>
+
+      {totalPaginas > 1 && (
+        <div className="flex justify-between items-center px-5 mt-5">
+          <button onClick={() => setPaginaAtual(paginaAtual - 1)} disabled={paginaAtual === 0} className="px-3 py-1 bg-gray-200 rounded disabled:opacity-50">Anterior</button>
+          <span className="text-sm">Página {paginaAtual + 1} de {totalPaginas}</span>
+          <button onClick={() => setPaginaAtual(paginaAtual + 1)} disabled={paginaAtual === totalPaginas - 1} className="px-3 py-1 bg-gray-200 rounded disabled:opacity-50">Próximo</button>
+        </div>
+      )}
     </div>
   );
 };

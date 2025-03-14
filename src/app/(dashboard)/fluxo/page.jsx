@@ -1,5 +1,7 @@
 import MaiorFluxo from "@/components/maiorFluxo";
 import MenorFluxo from "@/components/menorFluxo";
+import AvisoSinalizacao from "@/components/avisoSinalizacao";
+import AvisoBebida from "@/components/avisoBebida";
 
 const Page = () => {
   return (
@@ -9,8 +11,9 @@ const Page = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-4">
         <MaiorFluxo />
         <MenorFluxo />
+        <AvisoSinalizacao/>
+        <AvisoBebida/>
       </div>
-      
     </div>
   );
 };
