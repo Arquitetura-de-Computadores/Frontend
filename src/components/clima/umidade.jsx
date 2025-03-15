@@ -26,7 +26,7 @@ const Umidade = () => {
             <h1 className="text-[20px] font-semibold text-black mb-12">Umidade</h1>
             <div className="flex items-center justify-center mb-6">
                 <h1 className="font-semibold text-[300%]">
-                    {umidade !== null ? `${umidade}%` : "Carregando..."}
+                    {umidade !== null ? `${umidade}%` : <p className="text-gray-600 text-[16px] font-light">Carregando...</p>}
                 </h1>
             </div>
             {pathname !== "/clima" && (

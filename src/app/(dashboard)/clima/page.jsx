@@ -1,8 +1,26 @@
+"use client"
 import Temperatura from "@/components/clima/temperatura"
 import Umidade from "@/components/clima/umidade"
 import AvisoClima from "@/components/clima/avisoClima"
+import { useEffect, useState } from "react";
+import { getTemperatura } from "@/services/apiRotas";
 
 const Page = () => {
+  const [temperatura, setTemperatura] = useState(null);
+
+  useEffect(() => {
+    const fetchTemperatura = async () => {
+      try {
+        const data = await getTemperatura();
+        setTemperatura(data.temperatura);
+      } catch (error) {
+        console.error("Erro ao buscar temperatura:", error);
+      }
+    };
+
+    fetchTemperatura();
+  }, []);
+
   return (
     <div className="mt-4 px-12">
       <h1 className="text-[28px] font-semibold">Temperatura e Umidade do ar</h1>
@@ -12,11 +30,11 @@ const Page = () => {
 
         <div className="flex w-2/3 flex-col">
           <div className="rounded-xl bg-white py-3">
-            <Temperatura/>
+            <Temperatura temperatura={temperatura} />
           </div>
         </div>
         <div className=" rounded-xl w-2/3 bg-white p-4">
-          <Umidade/>
+          <Umidade />
         </div>
       </div>
       <div className="mt-8">
@@ -26,7 +44,7 @@ const Page = () => {
         </div>
       </div>
       <div className="mt-16">
-        <AvisoClima/>
+        <AvisoClima temperatura={temperatura} />
       </div>
     </div>
   )
