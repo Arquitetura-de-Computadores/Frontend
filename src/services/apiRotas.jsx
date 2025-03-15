@@ -39,3 +39,13 @@ export const getTrafego = async () => {
         throw error;
     }
 };
+
+export const getColeta = async () => {
+    try {
+        const response = await axiosInstance.get("/coleta");
+        return response.data;
+    } catch (error) {
+        console.error("Erro ao buscar tráfego:", error);
+        throw error;
+    }
+};
