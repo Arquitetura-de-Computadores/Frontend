@@ -29,3 +29,13 @@ export const getLuz = async () => {
         throw error;
     }
 };  
+
+export const getTrafego = async () => {
+    try {
+        const response = await axiosInstance.get("/trafego");
+        return response.data;
+    } catch (error) {
+        console.error("Erro ao buscar tráfego:", error);
+        throw error;
+    }
+};

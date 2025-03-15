@@ -39,7 +39,7 @@ const Menu = () => {
             {menuItems.map((item, index) => (
                 <Link href={item.href} key={index} className={`flex items-center gap-6 py-6 px-4 rounded-lg transition-all duration-200 ${pathname === item.href ? "bg-blue-500 text-white" : "text-black"}`} >
                     <Image src={item.icon} alt={item.label} width={20} height={20} className={`${pathname === item.href ? "invert" : ""}`}/>
-                    <span>{item.label}</span>
+                    <span className="hidden lg:block">{item.label}</span>
                 </Link>
             ))}
         </div>
