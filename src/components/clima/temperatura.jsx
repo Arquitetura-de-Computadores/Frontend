@@ -2,9 +2,25 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { getTemperatura } from "@/services/apiRotas";
 
-const Temperatura = ({ temperatura }) => {
+const Temperatura = () => {
     const pathname = usePathname();
+    const [temperatura, setTemperatura] = useState(null);
+    
+      useEffect(() => {
+        const fetchTemperatura = async () => {
+          try {
+            const data = await getTemperatura();
+            setTemperatura(data.temperatura);
+          } catch (error) {
+            console.error("Erro ao buscar temperatura:", error);
+          }
+        };
+    
+        fetchTemperatura();
+      }, []);
 
     return (
         <div className="flex flex-col gap-20">

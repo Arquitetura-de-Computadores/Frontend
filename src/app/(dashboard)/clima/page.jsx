@@ -30,7 +30,7 @@ const Page = () => {
 
         <div className="flex w-2/3 flex-col">
           <div className="rounded-xl bg-white py-3">
-            <Temperatura temperatura={temperatura} />
+            <Temperatura />
           </div>
         </div>
         <div className=" rounded-xl w-2/3 bg-white p-4">

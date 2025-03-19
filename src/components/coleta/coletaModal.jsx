@@ -20,6 +20,7 @@ const ColetaModal = ({ rua, onClose }) => {
                     <span className="absolute inset-0 flex items-center justify-center text-black font-bold text-lg"> {rua.status}% </span>
                 </div>
                 <p className="mt-4 text-center">A lixeira ocupa <span className="font-bold">{rua.status}%</span> da sua capacidade.</p>
+                <p className="mt-4 text-center font-bold">{rua.peso}kg</p>
                 <button className="mt-4 w-full py-2 bg-red-500 text-white font-bold rounded" onClick={onClose}>Fechar</button>
             </div>
         </div>
