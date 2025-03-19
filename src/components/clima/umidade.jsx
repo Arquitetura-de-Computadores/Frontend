@@ -24,9 +24,9 @@ const Umidade = () => {
 
     return (
         <div className="rounded-xl bg-white py-6 px-5 w-[90%] max-w-lg mx-auto">
-            <h1 className="text-[20px] font-semibold text-black mb-12">Umidade</h1>
-            <div className="relative flex items-center justify-center mb-6">
-                <Image src="/Nuvem2.svg" alt="" width={250} height={120} />
+            <h1 className="text-[20px] font-semibold text-black mb-2">Umidade</h1>
+            <div className="relative flex items-center justify-center mb-2">
+                <Image src="/Nuvem2.svg" alt="" width={200} height={120} />
                 <h1 className="mt-6 absolute font-semibold text-[300%]">
                     {umidade !== null ? `${umidade}%` : <p className="text-gray-600 text-[16px] font-light absolute">Carregando...</p>}
                 </h1>

@@ -25,8 +25,8 @@ const Temperatura = () => {
     return (
         <div className="flex flex-col gap-20">
             <div className="rounded-xl bg-white py-6 px-5 w-[90%] max-w-lg mx-auto flex flex-col">
-                <h1 className="text-[20px] font-semibold text-black mb-5">Temperatura</h1>
-                <div className="flex items-center justify-center gap-6 mb-6">
+                <h1 className="text-[20px] font-semibold text-black mb-10">Temperatura</h1>
+                <div className="flex items-center justify-center gap-6 mb-10">
                     <Image src="/Termometro.svg" alt="" width={50} height={120} />
                     <h1 className="font-semibold text-[300%]">
                         {temperatura !== null ? `${temperatura}°` : <p className="text-gray-600 text-[16px] font-light">Carregando...</p>}
